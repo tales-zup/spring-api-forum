@@ -23,6 +23,9 @@ public class SecurityConfigurations extends WebSecurityConfigurerAdapter {
     @Override
     @Bean
     protected AuthenticationManager authenticationManager() throws Exception {
+        // Esse método é o que será chamado la no AutenticacaoController, estando anotado
+        // com @Bean, vai existir apenas uma instância, então essa será chamada
+        // caso tire o @Bean, vai dar um erro de injecao la no controller
         return super.authenticationManager();
     }
 
